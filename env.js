@@ -1,0 +1,1 @@
+export const url = 'http://log-serv-app:5001/api/log/'

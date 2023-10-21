@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+
+  user-serv-app:
+    build:
+      dockerfile: ./Dockerfile
+    container_name: userserv
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    depends_on:
+      - user-db
+    networks:
+      - service-network
+  user-db:
+    image: postgres:14.1-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=users_service
+      - POSTGRES_USER=dakz
+      - POSTGRES_PASSWORD=123321
+    networks:
+      - service-network
+networks:
+  service-network:
+    external: true
