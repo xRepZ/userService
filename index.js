@@ -1,4 +1,3 @@
-//require('dotenv').config()
 import dotenv from 'dotenv';
 
 import express from 'express'
@@ -7,12 +6,7 @@ import { UsersModel } from './models/models.js'
 import cors from 'cors'
 import router from './routes/index.js'
 import {errorHandler} from './middleware/errorHandle.js'
-// const express = require("express")
-// const sequelize = require('./db')
-// const models = require('./models/models')
-// const cors = require('cors')
-// const router = require('./routes/index')
-// const errorHandler = require('./middleware/errorHandle')
+
 dotenv.config()
 const PORT = process.env.PORT
 
