@@ -16,12 +16,6 @@ app.use(express.json())
 app.use('/api', router)
 
 
-app.use(errorHandler)
-
-// app.get('/', (req, resp) => {
-//     resp.status(200).json({message: 'Work'})
-// })
-
 const start = async () => {
     try {
         await sequelize.authenticate()
